@@ -16,6 +16,6 @@ The steps for running "spidey" are:
 * Navigate to top folder of spidey project.
 * Enter command:
 
-scrapy crawl spidey -a password=<whatever> -a nickname=<whomever> -a post=<number> -a user=<number> -a ct=<number> -o x.json
+scrapy crawl spidey -a password=***whatever*** -a nickname=***whomever*** -a post=***number*** -a user=***number*** -a ct=***number*** -o x.json
 
 Another tool can extract data from the json output file.
