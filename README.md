@@ -1,6 +1,6 @@
 # spidey
 
-This is a test to learn more about the Python Scrapy framework.
+This was an exercise for learning more about the Python Scrapy framework.
 
 http://scrapy.org/
 
@@ -10,10 +10,12 @@ expressions to extract the desired info.
 
 I'm using Python 2.7.10.  I set up a virtual environment with the latest Scrapy version.
 
+The steps for running "spidey" are:
+
 * Activate virtual environment.
 * Navigate to top folder of spidey project.
 * Enter command:
 
-> scrapy crawl spidey -a password=<whatever> -a nickname=<whomever> -a post=<number> -a user=<number> -a ct=<number> -o x.json
+scrapy crawl spidey -a password=<whatever> -a nickname=<whomever> -a post=<number> -a user=<number> -a ct=<number> -o x.json
 
 Another tool can extract data from the json output file.
