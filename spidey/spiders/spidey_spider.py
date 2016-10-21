@@ -54,11 +54,15 @@ class SpideySpider(scrapy.Spider):
         print "date:  ", s_datetime
 
         # link to next post has a long xpath
+        # but must also handle case if next post does not exist
         q0 = response.xpath(uix.XPATH_POST1)
         q1 = q0.xpath(uix.XPATH_POST2)
         print q0
         print q1
-        s_next_url = q1.extract()[0]
+        s_next_url = ""
+        url_extractor = q1.extract()
+        if url_extractor:
+            s_next_url = q1.extract()[0]
         
         # category must be found based on class name
         # then remove whitespace
@@ -83,6 +87,10 @@ class SpideySpider(scrapy.Spider):
         item['category'] = s_category
         item['writing'] = s_writing
         yield item
+
+        # stop if next URL is blank
+        if not s_next_url:
+            return
 
         # stop if desired number of pages have been crawled
         self.ct -= 1
