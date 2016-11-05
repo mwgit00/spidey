@@ -19,3 +19,11 @@ The steps for running "spidey" are:
 scrapy crawl spidey -a password=***whatever*** -a nickname=***whomever*** -a post=***number*** -a user=***number*** -a ct=***number*** -o x.json
 
 Another tool can extract data from the json output file.
+
+-- 
+
+Here are some handy encryption commands:
+
+openssl aes-256-cbc -a -salt -in ***plain_text_file*** -out ***ASCII_encrypted_file***
+
+openssl aes-256-cbc -d -a -in ***ASCII_encrypted_file*** -out ***plain_text_file***
