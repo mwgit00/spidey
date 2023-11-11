@@ -22,8 +22,12 @@ Another tool can extract data from the json output file.
 
 -- 
 
-Here are some handy encryption commands:
+Here are some OpenSSL encryption and decryption commands:
 
-openssl aes-256-cbc -a -salt -in ***plain_text_file*** -out ***ASCII_encrypted_file***
+openssl aes-256-cbc -a -salt -in ***plain_text_file*** -out ***ASCII_encrypted_file*** -k <password>
 
-openssl aes-256-cbc -d -a -in ***ASCII_encrypted_file*** -out ***plain_text_file***
+openssl aes-256-cbc -d -a -in ***ASCII_encrypted_file*** -out ***plain_text_file*** -k <password>
+
+Decryption if file was encrypted with older version of OpenSSL:
+
+openssl aes-256-cbc -d -a -md md5 -in ***ASCII_encrypted_file*** -out ***plain_text_file*** -k <password>
