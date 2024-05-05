@@ -31,3 +31,5 @@ openssl aes-256-cbc -d -a -in ***ASCII_encrypted_file*** -out ***plain_text_file
 Decryption if file was encrypted with older version of OpenSSL:
 
 openssl aes-256-cbc -d -a -md md5 -in ***ASCII_encrypted_file*** -out ***plain_text_file*** -k *password*
+
+Or use 7-Zip and its encryption.  Hint:  What time is it?
